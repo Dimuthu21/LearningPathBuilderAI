@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 # 1️⃣ Load the Gemini API key from the .env file
 load_dotenv()
-genai.configure(api_key=os.getenv("AIzaSyCbO2pRB7PKVwq2Y89jp-J6utnaGCeLjpc"))
+genai.configure(api_key=os.getenv("AIzaSyCemfLlX-Q4L4GDWcx6OPeWlxAmWplF6jo"))
 
 # 2️⃣ Define the function that talks to Gemini and gets a roadmap
 def generate_learning_path(topic):
