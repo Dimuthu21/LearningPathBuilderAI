@@ -1,9 +1,6 @@
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
-from langchain.agents import initialize_agent, AgentType
-from langchain.tools import Tool
-from langchain.llms import GooglePalm
 
 # 1️⃣ Load the Gemini API key from the .env file
 load_dotenv()
