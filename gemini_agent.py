@@ -1,10 +1,13 @@
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from langchain.agents import initialize_agent, AgentType
+from langchain.tools import Tool
+from langchain.llms import GooglePalm
 
 # 1️⃣ Load the Gemini API key from the .env file
 load_dotenv()
-genai.configure(api_key=os.getenv("AIzaSyCemfLlX-Q4L4GDWcx6OPeWlxAmWplF6jo"))
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # 2️⃣ Define the function that talks to Gemini and gets a roadmap
 def generate_learning_path(topic):
