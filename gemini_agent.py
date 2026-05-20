@@ -23,7 +23,7 @@ def generate_learning_path(topic):
     Format it in clean markdown.
     """
 
-    model = genai.GenerativeModel("models/gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
     response = model.generate_content(prompt)
 
