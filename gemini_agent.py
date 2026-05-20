@@ -2,29 +2,29 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-# 1️⃣ Load the Gemini API key from the .env file
+# Load environment variables
 load_dotenv()
-genai.configure(api_key=os.getenv("AIzaSyCemfLlX-Q4L4GDWcx6OPeWlxAmWplF6jo"))
 
-# 2️⃣ Define the function that talks to Gemini and gets a roadmap
+# Configure Gemini API
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+# Generate roadmap
 def generate_learning_path(topic):
+
     prompt = f"""
     You are a professional mentor. Please create a personalized weekly learning roadmap for the topic: "{topic}".
 
     Include:
-    - Weekly breakdown (e.g., Week 1, Week 2...)
+    - Weekly breakdown
     - Subtopics to learn each week
-    - Suggested resources (books, videos, online courses)
+    - Suggested resources
     - Clear and simple structure
 
-    Format it in clean markdown so I can display it nicely in a webpage.
+    Format it in clean markdown.
     """
 
-    # 3️⃣ Create the Gemini model (Gemini Pro)
     model = genai.GenerativeModel("models/gemini-1.5-flash")
 
-    # 4️⃣ Send the prompt and get the response
     response = model.generate_content(prompt)
 
-    # 5️⃣ Return the text content from the response
     return response.text
